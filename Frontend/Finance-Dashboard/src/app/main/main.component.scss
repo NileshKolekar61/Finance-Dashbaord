@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 5%;
+  height: 100vh;
+  min-width: 250px;
+  background-color: #2b8a9b;
+  box-shadow: 0px 4px 50px #d9ddfc;
+}
+
+.outlet {
+  width: 95%;
+}
+
+.navbar {
+  height: 7%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.router-outlet {
+  height: 93%;
+}

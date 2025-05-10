@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="sidebar" [class.active]="isSidebarOpen">
+    <app-side-bar></app-side-bar>
+  </div>
+  <div class="outlet">
+    <div class="navbar">
+      <app-nav-bar class="w-100 h-100" ></app-nav-bar>
+    </div>
+    <div class="router-outlet"> 
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
