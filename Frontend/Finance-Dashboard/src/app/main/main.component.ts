@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -7,11 +8,19 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
   
-  isSidebarOpen = true;
+  isSidebarOpen: boolean = true;
   currentPage: string = '';
 
-  toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
-  }  
+  constructor(
+    private readonly router: Router
+  ) {}
+
+  panelToggle(value: boolean) {
+    this.isSidebarOpen = value;
+  }
+
+  SelectedSidebarItem(item: string) {
+    this.router.navigate([`finance/${item}`])
+  }
 
 }

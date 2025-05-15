@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CardsRoutingModule } from './cards-routing.module';
+import { CardsComponent } from './cards/cards.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CardsComponent
+  ],
   imports: [
     CommonModule,
     CardsRoutingModule

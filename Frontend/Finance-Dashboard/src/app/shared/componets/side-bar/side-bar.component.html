@@ -1,3 +1,18 @@
-<div class="sidebar-container">
+<div class="side-bar-container">
+    <div [ngClass]="!isSidebarOpen ? 'toggle-container': ''" class="toggle-main">
+        <button type="button" class="toggle-btn" (click)="toggleSidebar()">
+            <i class="pi pi-angle-double-left" *ngIf="isSidebarOpen" style="font-size: 1.2rem"></i>
+            <i class="pi pi-angle-double-right" *ngIf="!isSidebarOpen" style="font-size: 1.2rem"></i>
+        </button>
+    </div>
 
+    <div *ngIf="isSidebarOpen" class="sidebar-content">
+        <div class="sidebar-list">
+            <ul class="side-bar-ul">
+                <li *ngFor="let list of sideBarList" (click)="selectedListItem(list[0])" tabindex="0">
+                    {{list[1]}}
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

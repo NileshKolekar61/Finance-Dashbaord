@@ -1,3 +1,38 @@
-.sidebar-container {
+.side-bar-container {
+    padding: 10px;
     height: 100%;
+
+    .toggle-main {
+        height: 30px;
+    }
+
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+}
+
+.toggle-btn {
+    border: none;
+    background: transparent;
+}
+
+.sidebar-list {
+    margin-top: 15px;
+
+    .side-bar-ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    
+        li {
+            text-align: center;
+            padding: 10px 0;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
 }

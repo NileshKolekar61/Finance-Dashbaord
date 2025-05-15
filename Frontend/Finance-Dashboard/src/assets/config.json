@@ -1,0 +1,10 @@
+{
+    "SideBarItems": {
+        "dashbaord": "Dashboard",
+        "income": "Income",
+        "expenses": "Expenses",
+        "invest": "Invest",
+        "cards": "Cards",
+        "accounts": "Accounts"
+    }
+}
