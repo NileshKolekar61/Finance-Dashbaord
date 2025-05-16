@@ -2,9 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { ConfigService } from '../../services/config.service';
 
 @Component({
-  selector: 'app-side-bar',
-  templateUrl: './side-bar.component.html',
-  styleUrl: './side-bar.component.scss'
+    selector: 'app-side-bar',
+    templateUrl: './side-bar.component.html',
+    styleUrl: './side-bar.component.scss',
+    standalone: false
 })
 export class SideBarComponent {
 

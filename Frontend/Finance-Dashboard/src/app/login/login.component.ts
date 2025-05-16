@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotificationService } from '../shared/services/notification.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  standalone: false
 })
 export class LoginComponent implements OnInit {
 
   signInForm: FormGroup;
   signUpForm: FormGroup;
-
   selectedTab: string = 'Sign In';
-  constructor(private router: Router) { }
+
+  constructor(
+    private router: Router,
+    private notificationService: NotificationService,
+  ) { }
 
   ngOnInit(): void {
     this.signInForm = new FormGroup({
@@ -29,13 +34,12 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
-    console.log(this.signInForm.value);
+    this.notificationService.showSuccess('Login successful');
     this.signInForm.reset();
-    // this.router.navigate(['finance']);
+    this.router.navigate(['finance']);
   }
 
   signUp() {
-    console.log(this.signUpForm.value);
   }
 
   selectTab(tab: string): void {

@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { SharedModule } from './shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms'; // ✅ import this
-import { ButtonModule } from 'primeng/button';
-
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { ButtonModule } from 'primeng/button';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    ButtonModule
+    ToastModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
