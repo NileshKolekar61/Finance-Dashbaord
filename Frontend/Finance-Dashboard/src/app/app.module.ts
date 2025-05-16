@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms'; // ✅ import this
+import { ButtonModule } from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    ButtonModule
   ],
   providers: [
     provideClientHydration()

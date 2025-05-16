@@ -1,8 +1,40 @@
 <div class="login-container">
-    <div class="sign-in-container">
+    <div class="login-header">
         <ul>
-            <li>Sign In</li>
-            <li>Register</li>
+            <li [class.active]="selectedTab === 'Sign In'" (click)="selectTab('Sign In')">
+                Sign In
+            </li>
+            <li [class.active]="selectedTab === 'Sign Up'" (click)="selectTab('Sign Up')">
+                Sign Up
+            </li>
         </ul>
+    </div>
+    <div class="login-content row">
+        <div class="col-8 left-content">
+            <img src="../../assets/Images/login-bg-1.jpg" alt="">
+        </div>
+        <div class="col-4 right-content">
+            <div class="finance-tracker">
+                <p>Personal Finance Tracker</p>
+            </div>
+            <div class="form-container">
+                <form *ngIf="selectedTab === 'Sign In'" class="sign-in" [formGroup]="signInForm" (submit)="signIn()">
+                    <input type="email" placeholder="Enter Email" formControlName="email">
+                    <input type="text" placeholder="Enter Password" formControlName="password">
+                    <button>SIGN IN</button>
+                </form>
+                <form *ngIf="selectedTab === 'Sign Up'" class="sign-up" [formGroup]="signUpForm" (submit)="signUp()">
+                    <input type="text" placeholder="Enter First Name" formControlName="firstname">
+                    <input type="text" placeholder="Enter Last Name" formControlName="lastname">
+                    <input type="email" placeholder="Enter Email" formControlName="email">
+                    <input type="number" placeholder="Enter Phone" formControlName="number">
+                    <button>SIGN UP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p-button label="Click Me"></p-button>
+
     </div>
 </div>

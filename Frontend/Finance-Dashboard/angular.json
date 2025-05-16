@@ -33,18 +33,19 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "primeng/resources/themes/lara-light-blue/theme.css",
+              "primeng/resources/primeng.min.css",
+              "primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": [
-                "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -114,5 +115,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5e52c3cd-e0f9-43b7-b152-5c3bf4e65405"
   }
 }

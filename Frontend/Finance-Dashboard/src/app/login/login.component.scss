@@ -1,23 +1,118 @@
 .login-container {
     height: 100vh;
     width: 100vw;
-    background-color: #e8ecf8;
-    padding: 20px;
+    background-color: #dbdcde;
+    padding: 10px;
 }
 
-.sign-in-container {
-    display: flex;
-    justify-content: end;
-    border: 1px solid red;
+.login-header {
+    height: 10%;
 
     ul {
+        list-style: none;
         display: flex;
+        justify-content: end;
         padding: 0;
         margin: 0;
-        margin-right: 5%;
     }
 
     li {
-        list-style-type: none;
+        padding: 5px 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+}
+
+.footer {
+    height: 10%;
+}
+
+.login-header li:hover {
+    color: #2B8A9B;
+}
+
+.login-header li.active {
+    color: #2B8A9B;
+}
+
+.login-header li.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right, #2B8A9B, #5FB3C2);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.login-content {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 60%;
+    }
+}
+
+.right-content {
+    margin-top: -5%;
+
+    .finance-tracker {
+        p {
+            font-size: 60px;
+            color: #2b8a9b;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 75px;
+        }
+    }
+
+
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.sign-in,
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+
+    input {
+        width: 70%;
+        padding: 12px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        background: transparent;
+        border: 1px solid #2b8a9b;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 70%;
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #2b8a9b;
+        color: white;
+        font-weight: bold;
+        border: none;
     }
 }
