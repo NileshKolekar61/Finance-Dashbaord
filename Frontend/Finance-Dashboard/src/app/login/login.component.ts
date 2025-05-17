@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotificationService } from '../shared/services/notification.service';
 
@@ -26,10 +26,10 @@ export class LoginComponent implements OnInit {
       password: new FormControl(''),
     });
     this.signUpForm = new FormGroup({
-      firstname: new FormControl(''),
-      lastname: new FormControl(''),
-      email: new FormControl(''),
-      number: new FormControl(''),
+      firstname: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$'), Validators.minLength(3)]),
+      lastname: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$'), Validators.minLength(3)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      number: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
     });
   }
 
@@ -40,10 +40,28 @@ export class LoginComponent implements OnInit {
   }
 
   signUp() {
+    this.notificationService.showSuccess('SignUp successful');
+    this.signUpForm.reset();
   }
 
   selectTab(tab: string): void {
     this.selectedTab = tab;
+  }
+
+  get firstname() {
+    return this.signUpForm.get('firstname');
+  }
+
+  get lastname() {
+    return this.signUpForm.get('lastname');
+  }
+
+  get email() {
+    return this.signUpForm.get('email');
+  }
+
+  get number() {
+    return this.signUpForm.get('number');
   }
 
 }

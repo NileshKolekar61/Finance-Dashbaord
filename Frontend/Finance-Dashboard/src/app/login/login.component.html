@@ -25,10 +25,32 @@
                 </form>
                 <form *ngIf="selectedTab === 'Sign Up'" class="sign-up" [formGroup]="signUpForm" (submit)="signUp()">
                     <input type="text" placeholder="Enter First Name" formControlName="firstname">
+                    <span class="form-error" *ngIf="firstname && firstname.touched">
+                        {{ firstname.errors?.['required'] ? 'First Name is required' :
+                        firstname.errors?.['pattern'] ? 'Enter Alphabets Only' :
+                        firstname.errors?.['minlength'] ? 'First Name Should At Least 3 Character' : ''
+                        }}
+                    </span>
                     <input type="text" placeholder="Enter Last Name" formControlName="lastname">
+                    <span class="form-error" *ngIf="lastname && lastname.touched">
+                        {{ lastname.errors?.['required'] ? 'Last Name is required' :
+                        lastname.errors?.['pattern'] ? 'Enter Alphabets Only' :
+                        lastname.errors?.['minlength'] ? 'Last Name Should At Least 3 Character' : ''
+                        }}
+                    </span>
                     <input type="email" placeholder="Enter Email" formControlName="email">
+                    <span class="form-error" *ngIf="email && email.touched">
+                        {{ email.errors?.['required'] ? 'Email is required' :
+                        email.errors?.['email'] ? 'Enter Valid Email' : ''
+                        }}
+                    </span>
                     <input type="number" placeholder="Enter Phone" formControlName="number">
-                    <button>SIGN UP</button>
+                    <span class="form-error" *ngIf="number && number.touched">
+                        {{ number.errors?.['required'] ? 'Phone Number is required' :
+                        number.errors?.['pattern'] ? 'Enter 10 Digit Mobile Number Only' : ''
+                        }}
+                    </span>
+                    <button [disabled]="signUpForm.invalid">SIGN UP</button>
                 </form>
             </div>
         </div>

@@ -100,10 +100,15 @@
         padding: 12px;
         border-radius: 5px;
         border: 1px solid #ccc;
-        margin-bottom: 10px;
         background: transparent;
         border: 1px solid #2b8a9b;
-        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .form-error {
+        color: red;
+        font-size: 14px;
+        margin-top: 2px;
     }
 
     button {
