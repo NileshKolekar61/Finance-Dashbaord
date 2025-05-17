@@ -9,8 +9,9 @@
     <div *ngIf="isSidebarOpen" class="sidebar-content">
         <div class="sidebar-list">
             <ul class="side-bar-ul">
-                <li *ngFor="let list of sideBarList" (click)="selectedListItem(list[0])" tabindex="0">
-                    {{list[1]}}
+                <li *ngFor="let list of sideBarList" (click)="selectedListItem(list[0])" tabindex="0"
+                    [class.selected]="selectedKey === list[0]">
+                    {{ list[1] }}
                 </li>
             </ul>
         </div>
