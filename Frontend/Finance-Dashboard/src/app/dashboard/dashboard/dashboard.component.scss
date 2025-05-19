@@ -1,0 +1,149 @@
+.dashboard-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+
+.echart-common {
+    height: 100%;
+}
+
+.card {
+    padding: 0 7px 7px 7px;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.loan-investment {
+    font-size: 18px;
+    font-weight: 600;
+    color: #747373;
+}
+
+.date-range {
+    font-size: 13px;
+    color: #747373;
+}
+
+.card-header-common {
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid red;
+}
+
+.card-content-common {
+    height: 85%;
+    // border: 1px solid red;
+
+
+    .row {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .col-3,
+    .col-9,
+    .col-6 {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.card-content-money {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.income-col {
+    border-right: 2px solid #34D399;
+}
+
+.income-money {
+    font-size: 30px;
+    font-weight: 400;
+    // color: #34D399;
+}
+
+.saving-money {
+    font-size: 30px;
+    font-weight: 400;
+    // color: orange;
+}
+
+.money-red {
+    font-size: 30px;
+    font-weight: 600;
+    color: #F87171;
+}
+
+.money-inc-dec {
+    font-size: 18px;
+}
+
+.pi-angle-double-up,
+.pi-angle-double-down {
+    color: #34D399;
+}
+
+
+// ---------------------------------------   Cards Skelaton Start  ---------------------------------------
+// First Row Start
+.first-row,
+.second-row,
+.third-row {
+    width: 100%;
+    height: 33.3%;
+    display: flex;
+    gap: 1.5%;
+}
+
+.first-row .card-income {
+    width: 30%;
+}
+
+.first-row .card-expenses {
+    width: 68.5%;
+}
+
+// Second Row Start
+.second-row {}
+
+.second-row .card-saving {
+    width: 30%;
+}
+
+.second-row .card-investments {
+    width: 30%;
+}
+
+.second-row .card-loans {
+    width: 37%;
+}
+
+// Third Row Start
+.third-row {}
+
+.third-row .card-insights {
+    width: 61.5%;
+}
+
+.third-row .card-cards {
+    width: 37%;
+}
+
+// ---------------------------------------   Cards Skelaton End  ---------------------------------------
